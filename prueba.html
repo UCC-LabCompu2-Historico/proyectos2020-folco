@@ -15,7 +15,7 @@
 	<meta name="theme-color" content="#ffffff">
 	<title> El agua en solución </title>
 	
-	<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap" rel="stylesheet">
 	<style>
 	body{
 	background: #0F3D54; 
@@ -25,7 +25,9 @@
 	hr.solid {
     border-top: 1px solid #aaa;
 	}
-	a:visited, a:link {color: white;}
+	a:visited, a:link {
+	color: white;
+	}
 	a:hover{font-weight: bold;
 	}
 	.arriba{
@@ -33,7 +35,12 @@
 	margin: 30px 20px 0px;
 	padding: 5px 5px;
 	width: 500px;
-	font-size: 1.5em;}
+	font-size: 1.5em;
+	}
+	.principal{
+	border: 0px solid white;
+	margin: 30px 20px 0px;
+	width: 700px;
 	}
 	</style>
 </head>
@@ -47,5 +54,23 @@
 <a href="start.html" target="_self"">Inicio</a> / <a href="prueba.html" target="_self" style="color: pink;">Prueba</a> / <a href="teoria.html" target="_self">Teoría</a>
 </div>
 </header>
+<section>
+		<div class="principal">
+		<form id="datos">
+		<label for="Solvente"> Cantidad del vaso de agua: </label> <input type="text" name="solvente" placeholder="0"/> ml
+		<br>
+		<label for="Soluto">"Aderezo" a agregar: </label><select name="solutos">
+			<option value="sal">Sal</option>
+			<option value="azucar">Azúcar</option>
+			<option value="aceite">Aceite</option>
+			</select>
+		<br>
+		<label for="Solutocant"> Cantidad del "aderezo": </label> <input type="text" name="solutocant" placeholder="0"/> g
+		<br>
+		</form>
+		</div>
+	</section>
+	<aside>
+	</aside>
 </body>
 </html>

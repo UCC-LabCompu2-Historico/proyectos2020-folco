@@ -18,7 +18,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap" rel="stylesheet">
 	<style>
 	body{
-	background: #0F3D54; 
+	background-image: url('Media/pattern.png');
+	background-repeat: repeat;
 	color: white;
 	font-family: 'Catamaran', sans-serif;
 	}
@@ -42,6 +43,10 @@
 	margin: 30px 20px 0px;
 	width: 700px;
 	}
+	.elcanvas{
+	float: right;
+	position: absolute; right: 300px; top: 200px;
+	}
 	</style>
 </head>
 <body>
@@ -50,27 +55,36 @@
 <span style="font-size: 40px">El agua en solución</span>
 <hr class="solid">
 </div>
+</header>
+<nav>
 <div class="arriba" style="margin: 0px 20px;">
 <a href="start.html" target="_self"">Inicio</a> / <a href="prueba.html" target="_self" style="color: pink;">Prueba</a> / <a href="teoria.html" target="_self">Teoría</a>
 </div>
+</nav>
 </header>
 <section>
+	<article>
 		<div class="principal">
 		<form id="datos">
-		<label for="Solvente"> Cantidad del vaso de agua: </label> <input type="text" name="solvente" placeholder="0"/> ml
-		<br>
+		<label for="Solvente"> Cantidad del vaso de agua: </label> <input type="text" name="solvente" size="5" placeholder="0"/> ml
+		<br><br>
 		<label for="Soluto">"Aderezo" a agregar: </label><select name="solutos">
 			<option value="sal">Sal</option>
 			<option value="azucar">Azúcar</option>
 			<option value="aceite">Aceite</option>
 			</select>
-		<br>
-		<label for="Solutocant"> Cantidad del "aderezo": </label> <input type="text" name="solutocant" placeholder="0"/> g
+		<br><br>
+		<label for="Solutocant"> Cantidad del "aderezo": </label> <input type="text" name="solutocant" size= "5" placeholder="0"/> g
 		<br>
 		</form>
 		</div>
-	</section>
+	</article>
 	<aside>
+	<div class="elcanvas">
+	<canvas width="300" height="300" style="border:1px solid #d3d3d3;">
+    Tu navegador no soporta el uso de canvas, y por lo tanto, no habrá visualización gráfica.
+	</canvas>
 	</aside>
+	</section>
 </body>
 </html>

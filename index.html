@@ -26,6 +26,7 @@
 	hr.solid {
     border-top: 1px solid #aaa;
 	}
+	a{-webkit-transition: font-weight 100ms;}
 	a:visited, a:link {
 	color: white;
 	}
@@ -47,7 +48,18 @@
 	float: right;
 	width: 20%; 
 	height: auto;
-	position: relative; right: 200px; bottom: 200px;
+	position: absolute; right: 200px; bottom: 200px;
+	}
+	#detalle{
+	text-decoration: underline;
+	}
+	.boton {
+	text-decoration: none;
+	padding: 2px 6px 2px 6px;
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	border-left: 1px solid #CCCCCC;
 	}
 	<!--Nota: el CSS se moverá a una hoja aparte al finalizar el proyecto.-->
 	</style>
@@ -67,8 +79,14 @@
 	<section>
 		<article>
 		<div class="principal">
-		<p>	¿Has estado bebiendo correctamente? <br> Estos recientes días, debiendo tener un mayor uso de aparatos electrónicos, muchos se olvidan de beber la cantidad de agua necesaria. Por favor asegúrate de beber 8 vasos diarios.</p>
-		<p> Ahora puedes comprobar, por motivos científicamente válidos, qué tanta azúcar o sal le puedes poner a tu vaso ¡antes de que sea peligroso! </p>
+		<p>	<h2>¿Has estado bebiendo correctamente? </h2></p>
+		<p> Estos recientes días, debiendo tener un mayor uso de aparatos electrónicos, muchos se olvidan de beber la cantidad de agua necesaria. Por favor asegúrate de beber 8 vasos diarios.</p>
+		<p> Ahora bien, es posible que si te afecta la marcada presencia en un solo lugar, hayas estado comiendo más, y no precisamente por necesidad. Esto, a largo plazo, podría acabar generando distintos problemas de salud, así que una alternativa de balance posible es: </p>
+		<ul> <li><span id="detalle">Reemplazar una comida diaria con un mero vaso de agua, y si preferible, con azúcar o electrolitos diluidos. </span></ul>
+		<p> (Si bien hay más, esta es la relevante para este sitio web) </p>
+		<p> 
+		<p> Si alguna vez has tenido esta clase de dudas, gracias a la existencia de esta página, ahora puedes comprobar, mediante un simple formulario, qué tanta azúcar o sal le puedes poner a tu vaso ¡antes de que sea peligroso! </p>
+		<a href="prueba.html" target="_self"  class="boton">Probar</a>
 		</div>
 		</article>
 	</section>

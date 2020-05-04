@@ -57,8 +57,16 @@
 	article{
 	column-count: 2;
 	-webkit-column-count: 2;
+	margin: 0px 0px 0px 30px;
+	text-align: justify;
 	}
 	#titl1{
 	font-size: 40px;
 	}
-	
+	.arriba2{
+	border: 0px solid white;
+	margin: 0px 20px 0px;
+	padding: 0px 5px;
+	width: 500px;
+	font-size: 1.5em;
+	}

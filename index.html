@@ -11,59 +11,12 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
 	<link rel="manifest" href="favicons/site.webmanifest">
 	<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="stylesheet" href="Estilos.css" type="text/css">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 	<title> El agua en solución </title>
 	
 	<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap" rel="stylesheet">
-	<style>
-	body{
-	background-image: url('Media/pattern.png');
-	background-repeat: repeat; 
-	color: white;
-	font-family: 'Catamaran', sans-serif;
-	}
-	hr.solid {
-    border-top: 1px solid #aaa;
-	}
-	a{-webkit-transition: font-weight 100ms;}
-	a:visited, a:link {
-	color: white;
-	}
-	a:hover{font-weight: bold;
-	}
-	.arriba{
-	border: 0px solid white;
-	margin: 30px 20px 0px;
-	padding: 5px 5px;
-	width: 500px;
-	font-size: 1.5em;
-	}
-	.principal{
-	border: 0px solid white;
-	margin: 30px 20px 0px;
-	width: 700px;
-	text-align: justify;
-	}
-	#agua{
-	float: right;
-	width: 20%; 
-	height: auto;
-	position: absolute; right: 200px; bottom: 200px;
-	}
-	#detalle{
-	text-decoration: underline;
-	}
-	.boton {
-	text-decoration: none;
-	padding: 2px 6px 2px 6px;
-	border-top: 1px solid #CCCCCC;
-	border-right: 1px solid #CCCCCC;
-	border-bottom: 1px solid #CCCCCC;
-	border-left: 1px solid #CCCCCC;
-	}
-	<!--Nota: el CSS se moverá a una hoja aparte al finalizar el proyecto.-->
-	</style>
 </head>
 <body>
 	<header>
@@ -74,11 +27,10 @@
 		</header>
 		<nav>
 		<div class="arriba" style="margin: 0px 20px;">
-			<a href="index.html" target="_self" style="color: pink;">Inicio</a> / <a href="prueba.html" target="_self">Prueba</a> / <a href="teoria.html" target="_self">Teoría</a>
+			<a href="index.html" target="_self" class="pagactual">Inicio</a> / <a href="prueba.html" target="_self">Prueba</a> / <a href="teoria.html" target="_self">Teoría</a>
 		</div>
 	</nav>
 	<section>
-		<article>
 		<div class="principal">
 		<p>	<h2>¿Has estado bebiendo correctamente? </h2></p>
 		<p> Estos recientes días, debiendo tener un mayor uso de aparatos electrónicos, muchos se olvidan de beber la cantidad de agua necesaria. Por favor asegúrate de beber 8 vasos diarios.</p>
@@ -88,7 +40,6 @@
 		<p> Si alguna vez has tenido esta clase de dudas, gracias a la existencia de esta página, ahora puedes comprobar, mediante un simple formulario, qué tanta azúcar o sal le puedes poner a tu vaso ¡antes de que sea peligroso! </p>
 		<a href="prueba.html" target="_self"  class="boton">Probar</a>
 		</div>
-		</article>
 	</section>
 	<aside>
 	<img id="agua" src="Media/agua.png" alt="Gota de agua.">

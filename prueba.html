@@ -11,44 +11,12 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
 	<link rel="manifest" href="favicons/site.webmanifest">
 	<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="stylesheet" href="Estilos.css" type="text/css">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 	<title> El agua en solución </title>
 	
 	<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap" rel="stylesheet">
-	<style>
-	body{
-	background-image: url('Media/pattern.png');
-	background-repeat: repeat;
-	color: white;
-	font-family: 'Catamaran', sans-serif;
-	}
-	hr.solid {
-    border-top: 1px solid #aaa;
-	}
-	a{-webkit-transition: font-weight 100ms;}
-	a:visited, a:link {
-	color: white;
-	}
-	a:hover{font-weight: bold;
-	}
-	.arriba{
-	border: 0px solid white;
-	margin: 30px 20px 0px;
-	padding: 5px 5px;
-	width: 500px;
-	font-size: 1.5em;
-	}
-	.principal{
-	border: 0px solid white;
-	margin: 30px 20px 0px;
-	width: 700px;
-	}
-	.elcanvas{
-	float: right;
-	position: absolute; right: 300px; top: 200px;
-	}
-	</style>
 </head>
 <body>
 <header>
@@ -59,12 +27,11 @@
 </header>
 <nav>
 <div class="arriba" style="margin: 0px 20px;">
-<a href="index.html" target="_self"">Inicio</a> / <a href="prueba.html" target="_self" style="color: pink;">Prueba</a> / <a href="teoria.html" target="_self">Teoría</a>
+<a href="index.html" target="_self">Inicio</a> / <a href="prueba.html" target="_self" class="pagactual">Prueba</a> / <a href="teoria.html" target="_self">Teoría</a>
 </div>
 </nav>
 </header>
 <section>
-	<article>
 		<div class="principal">
 		<form id="datos">
 		<label for="Solvente"> Cantidad del vaso de agua: </label> <input type="text" name="solvente" size="5" placeholder="0"/> ml
@@ -79,10 +46,9 @@
 		<br>
 		</form>
 		</div>
-	</article>
 	<aside>
 	<div class="elcanvas">
-	<canvas width="300" height="300" style="border:1px solid #d3d3d3;">
+	<canvas width="300" height="300">
     Tu navegador no soporta el uso de canvas, y por lo tanto, no habrá visualización gráfica.
 	</canvas>
 	</aside>

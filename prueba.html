@@ -17,7 +17,7 @@
         <title> El agua en solución </title>
         <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body onload="setup()">
         <header>
             <div class="arriba">
                 <span id="titl1">El agua en solución</span>
@@ -34,8 +34,8 @@
             <div class="principal">
                 <form id="datos">
                     <label for="Solvente"> Cantidad del vaso de agua: </label>
-                    <input type="text" name="solvente" size="5" placeholder="0" />
-					<select name="unidadsolventes" size="1">
+                    <input type="text" id="solvente" name="solvente" size="5" placeholder="0" />
+					<select id="unidadsolventes" name="unidadsolventes" size="1">
                         <option value="ml">mililitros</option>
                         <option value="cc">centímetros cúbicos</option>
                         <option value="gal">galones</option>
@@ -43,7 +43,7 @@
                     <br>
                     <br>
                     <label for="Soluto">"Aderezo" a agregar: </label>
-                    <select name="solutos">
+                    <select id="solutos" name="solutos" onchange="corregirCanvas(this.value)">
                         <option value="sal">Sal</option>
                         <option value="azucar">Azúcar</option>
                         <option value="aceite">Aceite</option>
@@ -51,8 +51,8 @@
                     <br>
                     <br>
                     <label for="Solutocant"> Cantidad del "aderezo": </label>
-                    <input type="text" name="solutocant" size="5" placeholder="0" /> 
-					<select name="unidadsolventes">
+                    <input id="solutocant" type="text" name="solutocant" size="5" placeholder="0" /> 
+					<select id="unidadsolventes" name="unidadsolventes">
                         <option value="g">gramos</option>
 						<option value="mg">miligramos</option>
                         <option value="oz">onzas</option>
@@ -60,7 +60,7 @@
                     </select>
                     <br>
 					<br>
-					<button id="boton" type="button" onclick="Estequiometria()">
+					<button id="boton" type="button" onclick="Estequiometria(solvente.value, unidadsolventes.value, solutos.value, solutocant.value, unidadsolventes.value)">
 						Probar
 					</button>
                 </form>

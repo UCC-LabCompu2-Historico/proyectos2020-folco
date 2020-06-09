@@ -7,6 +7,7 @@
  */
  
  function universalidad (valor, unidad){
+	 console.log(valor,unidad);
 	if (valor.includes(",")){
 		valor=valor.replace(",",".");
 	}
@@ -33,7 +34,7 @@
 			valor=Math.round((453.592*valor)*100)/100;
 			break;
 	}}
-	
+	return valor;
 }
 
 function setup(){
@@ -75,6 +76,7 @@ function Estequiometria(svc, svu, so, soc, sou){
 	var c=so;
 	var d=universalidad(soc,sou); //g
 	var e=sou;
+	console.log(a,b,c,d,e);
 	
 	if(c=='aceite'){
 		mistakewasmade();
@@ -90,13 +92,12 @@ function Estequiometria(svc, svu, so, soc, sou){
 		}
 		if (a<solvsat){
 			//Aquí irian el dibujado en canvas y la escritura en el div.
+			document.getElementById("resultados").innerHTML="<u>Resultados:</u> la mezcla en el vaso está absolutamente saturada, hasta tal punto que quedan restos de " + c + " en el vaso.";
 		}else if(a==solvsat){
-			
+			document.getElementById("resultados").innerHTML="<u>Resultados:</u> la mezcla en el vaso está saturada, por lo que no admite ni un poco más de " + c + " en él. ¡Felicidades por el cálculo exacto! Solo recuerda que hay muchas variables que pueden cambiar este estado.";
 		}else{
-			
-		}
-		alert('La función funciona, hasta ahora. (Recuerde remover esto)');
-		
+			document.getElementById("resultados").innerHTML="<u>Resultados:</u> la mezcla en el vaso no está saturada, con lo que se puede seguir añadiendo " + c + ", si deseas.";
+		}		
 	}	
 }
 

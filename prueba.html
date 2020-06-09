@@ -35,7 +35,7 @@
                 <form id="datos">
                     <label for="Solvente"> Cantidad del vaso de agua: </label>
                     <input type="text" id="solvente" name="solvente" size="5" placeholder="0" />
-					<select id="unidadsolventes" name="unidadsolventes" size="1">
+					<select id="unidadsolventes" name="unidadsolventes">
                         <option value="ml">mililitros</option>
                         <option value="cc">centímetros cúbicos</option>
                         <option value="gal">galones</option>
@@ -52,7 +52,7 @@
                     <br>
                     <label for="Solutocant"> Cantidad del "aderezo": </label>
                     <input id="solutocant" type="text" name="solutocant" size="5" placeholder="0" /> 
-					<select id="unidadsolventes" name="unidadsolventes">
+					<select id="unidadsolutos" name="unidadsolutos">
                         <option value="g">gramos</option>
 						<option value="mg">miligramos</option>
                         <option value="oz">onzas</option>
@@ -60,11 +60,20 @@
                     </select>
                     <br>
 					<br>
-					<button id="boton" type="button" onclick="Estequiometria(solvente.value, unidadsolventes.value, solutos.value, solutocant.value, unidadsolventes.value)">
+					<button id="boton" type="button" onclick="Estequiometria(solvente.value, unidadsolventes.value, solutos.value, solutocant.value, unidadsolutos.value)">
 						Probar
 					</button>
                 </form>
             </div>
+			<section>
+			<div class="resultados">
+				<hr class='solid'>
+			</div>
+			<div class="resultados" id="resultados">
+					<p><u>Resultados:</u></p>
+				
+			</div>
+			</section>
             <aside>
                 <div class="elcanvas">
                 <canvas id="dibujo" width="700" height="600">

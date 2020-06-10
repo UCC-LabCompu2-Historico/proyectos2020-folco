@@ -9,3 +9,4 @@ La presente página web permitirá, a raíz de los recientes acontecimientos, tr
 # Tecnologías usadas
 - HTML
 - CSS
+- JS

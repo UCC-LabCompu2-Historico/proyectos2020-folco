@@ -35,7 +35,7 @@ function universalidad(valor, unidad) {
     return valor;
 }
 /**
- * Deshace los posibles cambios hechos por  la función universalidad.
+ * Deshace los posibles cambios hechos por la función universalidad.
  * @param {number} valor La cantidad del soluto o solvente.
  * @param {string} unidad La unidad en que dicho valor se halla.
  * @return {number} el valor convertido en la unidad original.
@@ -112,10 +112,11 @@ function Estequiometria(svc, svu, so, soc, sou) {
             //var solvsat = (d * 1000) / 359;
             var solusat = (a * 359) / 1000;
         }
-		reajuste();
-		animarSoluto(c);
-		setTimeout(rotar, 3000, c);
+        reajuste();
+        animarSoluto(c);
+        setTimeout(rotar, 3000, c);
         if (d > solusat) {
+			setTimeout(precipitado, 5500, c);
             document.getElementById("resultados").innerHTML = "<p><u>Resultados:</u> la mezcla en el vaso está absolutamente saturada, hasta tal punto que quedan restos de " + c + " en el vaso.</p><p>Máximo permitido: " + desuniversalidad(solusat, e) + " " + e + "</p>";
         } else if (d == solusat) {
             document.getElementById("resultados").innerHTML = "<u>Resultados:</u> la mezcla en el vaso está saturada, por lo que no admite ni un poco más de " + c + " en él. ¡Felicidades por el cálculo exacto! Solo recuerda que hay muchas variables que pueden cambiar este estado.";
@@ -168,13 +169,42 @@ function mistakewasmade() {
 
 
 /**
+ * Hace que el vaso parezca tener restos de soluto.
+ */
+function precipitado(soluto) {
+    var canvas = document.getElementById("dibujo");
+    var ctx = canvas.getContext('2d');
+    canvas.width = canvas.width;
+    var img = new Image();
+    img.src = "Media/vaso_sobresaturado.png";
+	var img2 = new Image();
+    switch (soluto) {
+        case 'sal':
+            img2.src = "Media/sal.png";
+            break;
+        case 'azucar':
+            img2.src = "Media/azucar.png";
+            break;
+	}
+	img.onload = function() {
+        ctx.drawImage(img, 300, 130);
+		ctx.save();
+        ctx.translate(270, 60);
+        ctx.rotate(120 * Math.PI / 180);
+        ctx.drawImage(img2,-48.39999999999989, -121, 100, 199);
+        ctx.restore();
+	}
+}
+	
+/**
  * Movimiento inicial del dibujo de soluto hacia el vaso.
  * @param {string} soluto El tipo de soluto que se usa.
  */
-px=100;
-py=380;
-dx=1;
-dy=2;
+px = 100;
+py = 380;
+dx = 1;
+dy = 2;
+
 function animarSoluto(soluto) {
     var canvas = document.getElementById("dibujo");
     var ctx = canvas.getContext('2d');
@@ -191,38 +221,39 @@ function animarSoluto(soluto) {
         case 'aceite':
             img2.src = "Media/aceite.png";
             break;
-	}
-	if (py<=60){
-			return;
-	}else{
-		canvas.width = canvas.width;
-		img2.onload = function(){
-			ctx.drawImage(img, 300, 130);
-			ctx.drawImage(img2, px, py, 100, 199);
-		}
-		px+=dx;
-		py-=dy;
-		setTimeout(animarSoluto, 15, soluto);
-	}
+    }
+    if (py <= 60) {
+        return;
+    } else {
+        canvas.width = canvas.width;
+        img2.onload = function() {
+            ctx.drawImage(img, 300, 130);
+            ctx.drawImage(img2, px, py, 100, 199);
+        }
+        px += dx;
+        py -= dy;
+        setTimeout(animarSoluto, 15, soluto);
+    }
 }
 
 /**
  * Rota el dibujo del soluto para simular un vuelque en el vaso.
  * @param {string} soluto El tipo de soluto que se usa.
  */
-pr=0;
-dr=1;
-px2=0;
-dx2=0.4;
-py2=0;
-dy2=1;
+pr = 0;
+dr = 1;
+px2 = 0;
+dx2 = 0.4;
+py2 = 0;
+dy2 = 1;
+
 function rotar(soluto) {
-	var canvas = document.getElementById("dibujo");
+    var canvas = document.getElementById("dibujo");
     var ctx = canvas.getContext('2d');
-	console.log(soluto);
-	var img = new Image();
+    console.log(soluto);
+    var img = new Image();
     img.src = "Media/vaso.png";
-	var img2 = new Image();
+    var img2 = new Image();
     switch (soluto) {
         case 'sal':
             img2.src = "Media/sal.png";
@@ -230,37 +261,45 @@ function rotar(soluto) {
         case 'azucar':
             img2.src = "Media/azucar.png";
             break;
-	}
-	if (pr>120){
-			return;
-	}else{	
-		canvas.width = canvas.width;
-		img.onload = function() { 
-			ctx.drawImage(img, 300, 130);
-			ctx.save();
-			ctx.translate(270,60);
-			ctx.rotate(pr*Math.PI/180);
-			ctx.drawImage(img2, px2, py2, 100, 199);
-			ctx.restore();
-		}
-		px2-=dx2;
-		py2-=dy2;
-		pr+=dr;
-		setTimeout(rotar, 15, soluto);
-	}
+    }
+    if (pr > 120) {
+        return;
+    } else {
+        canvas.width = canvas.width;
+        img.onload = function() {
+            ctx.drawImage(img, 300, 130);
+            ctx.save();
+            ctx.translate(270, 60);
+            ctx.rotate(pr * Math.PI / 180);
+            ctx.drawImage(img2, px2, py2, 100, 199);
+            ctx.restore();
+			console.log(px2,py2);
+        }
+        px2 -= dx2;
+        py2 -= dy2;
+        pr += dr;
+        setTimeout(rotar, 15, soluto);
+    }
 }
+/*
+Intentar hacer rotar correctamente ese salero fue el experimento más tedioso jamás intentado. 
+¿POR QUÉ gira como si fuera un círculo? 
+¿No se supone que deben hacerlo sobre su propio eje? 
+AARGH
+*/
+
 /**
  * Reajusta todas las variables globales (el canvas falla si se intenta repetir sin esto).
  */
-function reajuste(){
-px=100;
-py=380;
-dx=1;
-dy=2;
-pr=0;
-dr=1;
-px2=0;
-dx2=0.4;
-py2=0;
-dy2=1;
+function reajuste() {
+    px = 100;
+    py = 380;
+    dx = 1;
+    dy = 2;
+    pr = 0;
+    dr = 1;
+    px2 = 0;
+    dx2 = 0.4;
+    py2 = 0;
+    dy2 = 1;
 }

@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="Estilos.css" type="text/css">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-		<script type="text/javascript" src="Funciones.js"></script>
+        <script type="text/javascript" src="Funciones.js"></script>
         <title> El agua en solución </title>
         <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap" rel="stylesheet">
     </head>
@@ -35,7 +35,7 @@
                 <form id="datos">
                     <label for="Solvente"> Cantidad del vaso de agua: </label>
                     <input type="text" id="solvente" name="solvente" size="5" placeholder="0" />
-					<select id="unidadsolventes" name="unidadsolventes">
+                    <select id="unidadsolventes" name="unidadsolventes">
                         <option value="ml">mililitros</option>
                         <option value="cc">centímetros cúbicos</option>
                         <option value="gal">galones</option>
@@ -52,28 +52,27 @@
                     <br>
                     <label for="Solutocant"> Cantidad del "aderezo": </label>
                     <input id="solutocant" type="text" name="solutocant" size="5" placeholder="0" /> 
-					<select id="unidadsolutos" name="unidadsolutos">
+                    <select id="unidadsolutos" name="unidadsolutos">
                         <option value="g">gramos</option>
-						<option value="mg">miligramos</option>
+                        <option value="mg">miligramos</option>
                         <option value="oz">onzas</option>
                         <option value="lib">libras</option>
                     </select>
                     <br>
-					<br>
-					<button id="boton" type="button" onclick="Estequiometria(solvente.value, unidadsolventes.value, solutos.value, solutocant.value, unidadsolutos.value)">
-						Probar
-					</button>
+                    <br>
+                    <button id="boton" type="button" onclick="Estequiometria(solvente.value, unidadsolventes.value, solutos.value, solutocant.value, unidadsolutos.value)">
+                    Probar
+                    </button>
                 </form>
             </div>
-			<section>
-			<div class="resultados">
-				<hr class='solid'>
-			</div>
-			<div class="resultados" id="resultados">
-					<p><u>Resultados:</u></p>
-				
-			</div>
-			</section>
+            <section>
+                <div class="resultados">
+                    <hr class='solid'>
+                </div>
+                <div class="resultados" id="resultados">
+                    <p><u>Resultados:</u></p>
+                </div>
+            </section>
             <aside>
                 <div class="elcanvas">
                 <canvas id="dibujo" width="700" height="600">

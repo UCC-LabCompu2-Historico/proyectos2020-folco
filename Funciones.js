@@ -1,5 +1,6 @@
 /**
  * Función que trata con la conversión al sistema internacional de datos.
+ * @method universalidad
  * @param {number} valor La cantidad del soluto o solvente.
  * @param {string} unidad La unidad en que dicho valor se halla.
  * @return {number} El valor convertido en mililitros o gramos.
@@ -36,6 +37,7 @@ function universalidad(valor, unidad) {
 }
 /**
  * Deshace los posibles cambios hechos por la función universalidad.
+ * @method desuniversalidad
  * @param {number} valor La cantidad del soluto o solvente.
  * @param {string} unidad La unidad en que dicho valor se halla.
  * @return {number} el valor convertido en la unidad original.
@@ -65,6 +67,7 @@ function desuniversalidad(valor, unidad) {
 }
 /**
  * Función que prepara el canvas con lo mostrado al iniciar la página.
+ * @method setup
  */
 function setup() {
     var canvas = document.getElementById("dibujo");
@@ -84,6 +87,7 @@ function setup() {
 }
 /**
  * Hace el cálculo estequiométrico y dibuja la representación en el canvas.
+ * @method Estequiometria
  * @param {number} svc La cantidad del solvente.
  * @param {string} svu La unidad en que dicho valor se halla.
  * @param {string} so El tipo de soluto que se usa.
@@ -127,6 +131,7 @@ function Estequiometria(svc, svu, so, soc, sou) {
 }
 /**
  * Cambia lo que el canvas muestra al modificar alguna caja del formulario.
+ * @method corregirCanvas
  * @param {string} soluto El tipo de soluto que se usa.
  */
 function corregirCanvas(soluto) {
@@ -155,6 +160,7 @@ function corregirCanvas(soluto) {
 }
 /**
  * Ocurre si se intenta realizar el experimento con aceite.
+ * @method mistakewasmade
  */
 function mistakewasmade() {
     var canvas = document.getElementById("dibujo");
@@ -170,6 +176,8 @@ function mistakewasmade() {
 
 /**
  * Hace que el vaso parezca tener restos de soluto.
+ * @method precipitado
+ * @param {string} soluto El tipo de soluto que se usa.
  */
 function precipitado(soluto) {
     var canvas = document.getElementById("dibujo");
@@ -198,6 +206,7 @@ function precipitado(soluto) {
 	
 /**
  * Movimiento inicial del dibujo de soluto hacia el vaso.
+ * @method animarSoluto
  * @param {string} soluto El tipo de soluto que se usa.
  */
 px = 100;
@@ -238,6 +247,7 @@ function animarSoluto(soluto) {
 
 /**
  * Rota el dibujo del soluto para simular un vuelque en el vaso.
+ * @method rotar
  * @param {string} soluto El tipo de soluto que se usa.
  */
 pr = 0;
@@ -290,6 +300,7 @@ AARGH
 
 /**
  * Reajusta todas las variables globales (el canvas falla si se intenta repetir sin esto).
+ * @method reajuste
  */
 function reajuste() {
     px = 100;

@@ -66,7 +66,8 @@ a:hover {
 .elcanvas {
     float: right;
     position: absolute;
-    right: 250px;
+    right: 150px;
+	/*Francamente, desde mi pantalla el canvas se ve bien puesto, así que asumo es un problema de la posición absoluta.*/
     top: 200px;
     border: 1px solid #d3d3d3;
     background: gray;

@@ -210,7 +210,6 @@ if (isNaN(valor)||(valor < 0)){
         alert("Valor inválido ingresado.");
 		document.getElementById("solvente").value = "";
 		document.getElementById("solutocant").value = "";
-		setup();
 	}	
  }
 /**

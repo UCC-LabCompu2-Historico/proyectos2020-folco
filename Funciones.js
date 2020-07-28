@@ -6,32 +6,25 @@
  * @return {number} El valor convertido en mililitros o gramos.
  */
 function universalidad(valor, unidad) {
-    if (valor.includes(",")) {
-        valor = valor.replace(",", ".");
-    }
-    if (isNaN(valor)) {
-        alert("Valor inválido ingresado.");
-    } else {
-        switch (unidad) {
-            case 'ml':
-                break;
-            case 'cc':
-                break;
-            case 'gal':
-                valor = Math.round((3785.41 * valor) * 100) / 100;
-                break;
-            case 'g':
-                break;
-            case 'mg':
-                valor = Math.round((0.001 * valor) * 100) / 100;
-                break;
-            case 'oz':
-                valor = Math.round((28.3495 * valor) * 100) / 100;
-                break;
-            case 'lib':
-                valor = Math.round((453.592 * valor) * 100) / 100;
-                break;
-        }
+	switch (unidad) {
+        case 'ml':
+			break;
+        case 'cc':
+            break;
+		case 'gal':
+			valor = Math.round((3785.41 * valor) * 100) / 100;
+			break;
+		case 'g':
+			break;
+		case 'mg':
+			valor = Math.round((0.001 * valor) * 100) / 100;
+			break;
+		case 'oz':
+			valor = Math.round((28.3495 * valor) * 100) / 100;
+			break;
+		case 'lib':
+			valor = Math.round((453.592 * valor) * 100) / 100;
+			break;
     }
     return valor;
 }
@@ -101,7 +94,7 @@ function Estequiometria(svc, svu, so, soc, sou) {
     var c = so;
     var d = universalidad(soc, sou); //g
     var e = sou;
-
+	
     if (c == 'aceite') {
         mistakewasmade();
     } else {
@@ -203,7 +196,23 @@ function precipitado(soluto) {
         ctx.restore();
 	}
 }
-	
+
+/**
+ * Función que verifica que se ingresen valores apropiados.
+ * @method verify
+ * @param {number} valor El valor ingresado por el usuario.
+ */
+ function verify(valor){
+	 if (valor.includes(",")){
+		valor=valor.replace(",",".");
+	}
+if (isNaN(valor)||(valor < 0)){
+        alert("Valor inválido ingresado.");
+		document.getElementById("solvente").value = "";
+		document.getElementById("solutocant").value = "";
+		setup();
+	}	
+ }
 /**
  * Movimiento inicial del dibujo de soluto hacia el vaso.
  * @method animarSoluto

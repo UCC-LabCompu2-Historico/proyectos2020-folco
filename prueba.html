@@ -34,7 +34,7 @@
             <div class="principal">
                 <form id="datos">
                     <label for="solvente"> Cantidad del vaso de agua: </label>
-                    <input type="text" id="solvente" name="solvente" size="5" placeholder="0" />
+                    <input type="text" id="solvente" name="solvente" size="5" placeholder="0" onchange="verify(this.value)"/>
                     <select id="unidadsolventes" name="unidadsolventes">
                         <option value="ml">mililitros</option>
                         <option value="cc">centímetros cúbicos</option>
@@ -51,7 +51,7 @@
                     <br>
                     <br>
                     <label for="solutocant"> Cantidad del "aderezo": </label>
-                    <input id="solutocant" type="text" name="solutocant" size="5" placeholder="0" /> 
+                    <input id="solutocant" type="text" name="solutocant" size="5" placeholder="0" onchange="verify(this.value)"/> 
                     <select id="unidadsolutos" name="unidadsolutos">
                         <option value="g">gramos</option>
                         <option value="mg">miligramos</option>

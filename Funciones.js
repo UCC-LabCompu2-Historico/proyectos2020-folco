@@ -202,15 +202,16 @@ function precipitado(soluto) {
  * @method verify
  * @param {number} valor El valor ingresado por el usuario.
  */
- function verify(valor){
-	 if (valor.includes(",")){
-		valor=valor.replace(",",".");
-	}
-if (isNaN(valor)||(valor < 0)){
-        alert("Valor inválido ingresado.");
-		document.getElementById("solvente").value = "";
-		document.getElementById("solutocant").value = "";
-	}	
+ function verify(valor) {
+     if (valor.includes(",")) {
+         valor=valor.replace(",", ".");
+     }
+
+     if (isNaN(valor)||(valor < 0)) {
+         alert("Valor inválido ingresado.");
+         document.getElementById("solvente").value="";
+         document.getElementById("solutocant").value="";
+     }
  }
 /**
  * Movimiento inicial del dibujo de soluto hacia el vaso.
